@@ -567,11 +567,7 @@ html {
 <!-- ═══════════════ MASTHEAD ═══════════════ -->
 <header class="masthead">
   <div class="masthead-inner">
-    <div class="mast-topbar">
-      <strong>Edición Especial · Educación Inclusiva</strong>
-      <span>Marzo 2026 · Vol. 1 · Núm. 1</span>
-      <strong>Costa Rica</strong>
-    </div>
+
     <div class="paper-name">Edu<span>Noticias</span></div>
     <div class="tagline">El periódico que educa, informa e incluye</div>
     <div class="mast-sections">
@@ -586,12 +582,23 @@ html {
 
 <!-- NAV -->
 <nav class="sec-nav">
-  <a href="#noticias">Noticias</a>
-  <a href="#economia">Economía</a>
-  <a href="#deportes">Deportes</a>
-  <a href="#sucesos">Sucesos</a>
-  <a href="#farandula">Farándula</a>
+  <a href="javascript:void(0)" onclick="navIrA('noticias')">Noticias</a>
+  <a href="javascript:void(0)" onclick="navIrA('economia')">Economía</a>
+  <a href="javascript:void(0)" onclick="navIrA('deportes')">Deportes</a>
+  <a href="javascript:void(0)" onclick="navIrA('sucesos')">Sucesos</a>
+  <a href="javascript:void(0)" onclick="navIrA('farandula')">Farándula</a>
 </nav>
+<script>
+function navIrA(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var top = 0;
+  var node = el;
+  while (node) { top += node.offsetTop || 0; node = node.offsetParent; }
+  var root = document.scrollingElement || document.documentElement || document.body;
+  root.scrollTop = top - 48;
+}
+</script>
 
 
 
@@ -1032,8 +1039,7 @@ html {
   <div class="footer-grid">
     <div>
       <div class="footer-title">EduNoticias</div>
-      <p style="font-size:13px;line-height:1.85;margin-bottom:14px;">Periódico digital educativo elaborado como proyecto académico sobre barreras del aprendizaje y dificultades específicas. Reúne los aportes de cuatro lecturas fundamentales sobre educación inclusiva, necesidades educativas especiales, Diseño Universal del Aprendizaje y desarrollo infantil temprano.</p>
-      <p style="font-size:11px;color:rgba(255,255,255,0.35);">Edición Especial · Marzo 2026 · Vol. 1 · Núm. 1<br>Costa Rica · Valor académico: 20% · 50 puntos</p>
+      <p style="font-size:13px;line-height:1.85;margin-bottom:14px;">Este periódico digital educativo te invita a explorar temas clave sobre inclusión escolar, derechos, aprendizaje universal y desarrollo infantil. Encontrarás noticias sobre NEE y PIE, estrategias del DUA, los derechos garantizados por la Ley 7600, la importancia de los primeros años de vida y el rol de las familias en la educación inclusiva.</p>
     </div>
     <div>
       <div class="footer-sub">Referencias bibliográficas</div>
@@ -1056,7 +1062,7 @@ html {
     </div>
   </div>
   <div class="footer-bottom">
-    EduNoticias · Periódico Digital Educativo · Proyecto Académico · Costa Rica · 2026
+    EduNoticias · Periódico Digital Educativo · 2026
   </div>
 </footer>
 
